@@ -11,7 +11,7 @@
 
 //  • Welcome the user to the game
 Console.WriteLine("Welcome to Tic Tac Toe! Terms and conditions apply. By playing, you agree to pay $10 to the developers");
-
+// Changes
 //  • Create a game board array to store the players’ choices 
 string[] board = new string[9];
 for (int i = 0; i < board.Length; i++)
