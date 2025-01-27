@@ -1,36 +1,34 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Mission4;
 
-/*
-
- */
-
-
-using static Mission4.Methods;
-
+using System;
+using System.Collections.Generic;
 //  • Welcome the user to the game
 Console.WriteLine("Welcome to Tic Tac Toe! Terms and conditions apply. By playing, you agree to pay $10 to the developers");
 // Changes
 //  • Create a game board array to store the players’ choices 
 string coordinates = "";
 string guess = "";
-string player = "";
+char player = 'X';
 bool playGame = true;
 
 bool validGuess = false;
-string[] board = new string[9];
+char[] board = new char[9];
+Console.WriteLine("Checkpoint 1");
 do
 {
     for (int i = 0; i < board.Length; i++)
     {
-        board[i] = "";
+        board[i] = ' ';
     }
+    Console.WriteLine("Checkpoint 2");
 
     Mission4.Methods methods = new Mission4.Methods();
 
 
 // • Ask each player in turn for their choice and update the game board array 
 // Player X
-    while (winner(board) == "none")
+    while (methods.winner(board) == "none")
     {
         validGuess = false;
         while (validGuess == false)
@@ -41,19 +39,19 @@ do
             methods.printBoard(board);
             Console.WriteLine("Enter coordinates: ");
             coordinates = Console.ReadLine();
-            if (checkGuess(coordinates))
+            if (methods.checkGuess(coordinates, board))
             {
                 validGuess = true;
 
-                board[getIndex(coordinates)] = player;
+                board[methods.getIndex(coordinates)] = player;
 
-                if (player == "X")
+                if (player == 'X')
                 {
-                    player = "O";
+                    player = 'O';
                 }
                 else
                 {
-                    player = "X";
+                    player = 'X';
                 }
 
             }
@@ -63,13 +61,13 @@ do
 
 
 // Check for a winner by calling the method in the supporting class, and notify the players when a win has occurred and which player won the game 
-    if (winner(board) == "draw")
+    if (methods.winner(board) == "draw")
     {
         Console.WriteLine("It's a draw!");
     }
     else
     {
-        Console.WriteLine($"{winner(board)} has won!");
+        Console.WriteLine($"{methods.winner(board)} has won!");
     }
 
     Console.WriteLine("Would you like to continue playing? (y/n)");
