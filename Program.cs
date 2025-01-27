@@ -56,6 +56,7 @@ do
 
         }
     }
+    methods.printBoard(board);
 
 
 // Check for a winner by calling the method in the supporting class, and notify the players when a win has occurred and which player won the game 
@@ -71,7 +72,6 @@ do
     Console.WriteLine("Would you like to continue playing? (y/n)");
     if (Console.ReadLine().ToLower() == "n")
     {
-        methods.printBoard(board);
         playGame = false;
     }
 
