@@ -11,11 +11,20 @@ namespace Mission4
     {
         public void printBoard(char[] board) 
         {
+            char[] letters = new char[3];
+            letters[0] = 'A';
+            letters[1] = 'B';
+            letters[2] = 'C';
+            int numLetters = 0;
+
+            Console.Write("  1 2 3");
             for (int i = 0; i < board.Length; i++) // Print the board
             {
                 if (i%3 == 0) // Print on different lines every three values
                 {
                     Console.Write("\n");
+                    Console.Write(letters[numLetters] + " ");
+                    numLetters++;
                 }
                 Console.Write(board[i] + " ");
             }
