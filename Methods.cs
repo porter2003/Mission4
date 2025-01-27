@@ -60,7 +60,7 @@ namespace Mission4
         }
         public string winner(char[] board)
         {
-            string result = "";
+            string result = "none";
 
             // Winning combinations (indices of board)
             int[][] winningLines = new int[][]
@@ -90,7 +90,7 @@ namespace Mission4
             // Check for a draw (no empty spaces)
             if (!board.Contains(' '))
             {
-                result = "Draw";
+                result = "draw";
             }
 
             return result;
