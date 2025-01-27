@@ -38,7 +38,7 @@ do
             // Print the board by calling the method in the supporting class 
             methods.printBoard(board);
             Console.WriteLine("Enter coordinates: ");
-            coordinates = Console.ReadLine();
+            coordinates = Console.ReadLine().ToUpper();
             if (methods.checkGuess(coordinates, board))
             {
                 validGuess = true;
@@ -71,7 +71,7 @@ do
     }
 
     Console.WriteLine("Would you like to continue playing? (y/n)");
-    if (Console.ReadLine() == "n")
+    if (Console.ReadLine().ToLower() == "n")
     {
         playGame = false;
     }
