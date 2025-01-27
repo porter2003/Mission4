@@ -17,8 +17,9 @@ namespace Mission4
                 {
                     Console.Write("\n");
                 }
-                Console.Write(board[i]);
+                Console.Write(board[i] + " ");
             }
+            Console.WriteLine();
         }
         public bool checkGuess(string guess, char[] board)
         {
