@@ -14,14 +14,12 @@ bool playGame = true;
 
 bool validGuess = false;
 char[] board = new char[9];
-Console.WriteLine("Checkpoint 1");
 do
 {
     for (int i = 0; i < board.Length; i++)
     {
         board[i] = ' ';
     }
-    Console.WriteLine("Checkpoint 2");
 
     Mission4.Methods methods = new Mission4.Methods();
 
@@ -73,6 +71,7 @@ do
     Console.WriteLine("Would you like to continue playing? (y/n)");
     if (Console.ReadLine().ToLower() == "n")
     {
+        methods.printBoard(board);
         playGame = false;
     }
 
