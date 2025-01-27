@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mission4
 {
-    internal class Methods
+    public class Methods
     {
         public void printBoard(char[] board) 
         {
@@ -24,7 +24,7 @@ namespace Mission4
         {
             String[] array;
 
-            array = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"];
+            array = new string[] { "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3" };
 
             int position = 0;
 
@@ -52,7 +52,7 @@ namespace Mission4
         {
             String[] array;
 
-            array = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"];
+            array = new string[] { "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3" };
 
             int index = Array.IndexOf(array, guess);
 
